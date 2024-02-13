@@ -9,6 +9,7 @@ function add(n1:number, n2:number, showResult:boolean, phrase: string){
     } else{
         return result;
     }
+    return;
 }
 
 let numberX: number
