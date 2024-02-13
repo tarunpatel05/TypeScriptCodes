@@ -1,0 +1,15 @@
++++++++++++ after clone
+do
+npm install
+npm start
+open browser - http://localhost:3000/
+check the console if required to see output
+
++++++++++++++++++ git commands
+check the 'master' branch for latest changes
+
+ git add.
+ git commit -m "messages comments"
+ git remote add origin https://github.com/tarunpatel05/TypeScriptCodes.git
+ 'git push origin master' or 'git push --set-upstream origin master' once then use 'git push'
+
