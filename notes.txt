@@ -1,0 +1,47 @@
+/*  How to get the most out for the course
+watch the video -- At your speed
+Code Along -- Pause & Rewind
+Practice -- Advance on your own (Partly)
+Debug and Search -- Use attached code Google, Udemy QnA Search
+Ask & Answer -- Ask in QnA section but also help others
+*/
+
+install node js and npm
+npm install -g typescript
+
+npm init
+
+npm install --save-dev lite-server
+
+tsc app.ts
+
+
+++++++++ Core Types +++++++++
+number : 1, 2.3, -10
+string : 'Hi', "Hi", `Hi`
+boolean : true false (truthy falsy does not lie here )
+object : {age:20} Any JavaScript object, more specific types {types if object} are possible
+Array : [1,2,3] ANy JavaScript array, type can be flexible or strict (regarding the element type)
+
+Tuple : [1,2] Added by Typescript: Fixed length array
+Enum : enum{NEW,OLD} Added by TS: Automatically enumarated global constant identifiers
+Any : 
+
+
+typescript helps us during development does not change the code of javascript, TS can not run in browser, 
+only JS can be run by browser
+** the key difference is: javascript uses dynamic types(resolved at run time), typescript uses types static
+types (set during development)
+
+** In TS we work with types like 'string' or 'number' all the times
+It is string and number NOT String, number
+The core primitive types in TS are all lowercase
+checking types and yelling at us using wrong types
+
+++++++++++++++++++++++
+union types
+ex. input1: string|number
+
+literal types
+resultConversion:'as-number'|'as-string'
+
