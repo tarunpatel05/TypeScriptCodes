@@ -3,6 +3,7 @@ do
 npm install
 npm start
 open browser - http://localhost:3000/
+tsc app.ts
 check the console if required to see output
 
 +++++++++++++++++ git commands

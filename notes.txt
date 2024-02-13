@@ -45,3 +45,9 @@ ex. input1: string|number
 literal types
 resultConversion:'as-number'|'as-string'
 
+type alias
+type Combinable = number|string; //declaration
+input1: Combinable // how to use
+
+
+
