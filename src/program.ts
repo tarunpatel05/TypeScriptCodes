@@ -154,6 +154,30 @@ for (let i = 1; i <= 6; i++) {
   console.log(line);
 }
 
+//+++++++++++++++++++++++++++++++++++++++
+// Arrays of products and their corresponding prices
+// const products = ["iPhone 11", "Galaxy S23", "Pixel 4", "iPhone 8"];
+// const prices = [700, 560, 899, 284];
+
+// // Function to find the name of the product with the second highest price
+// function findSecondHighestProduct(products: string[], prices: number[]): string {
+//     // Combine the products and prices into an array of objects
+//     const combined = products.map((product, index) => ({
+//         name: product,
+//         price: prices[index]
+//     }));
+
+//     // Sort the array based on price in descending order
+//     combined.sort((a, b) => b.price - a.price);
+
+//     // Return the name of the product with the second highest price
+//     // Check if there is at least two products
+//     return combined.length > 1 ? combined[1].name : 'Not enough products';
+// }
+
+// const secondHighestProduct = findSecondHighestProduct(products, prices);
+// console.log(secondHighestProduct); // This will print the name of the product with the second highest price
+
 // +++++++++++++++++ remove duplicates and arrange in descending order in a string +++++++++++++
 const removeDuplicatesInDescendingOrder = (abc: string) => {
   // split all characters

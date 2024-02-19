@@ -111,4 +111,5 @@ const person1 = {
 };
 const {firstName: userName1,age} = person1;
 console.log(userName1, age, person)
+//++++++++++++++++++++++++++++
 
