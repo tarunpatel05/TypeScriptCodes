@@ -6,7 +6,7 @@ open browser - http://localhost:3000/
 tsc app.ts
 check the console if required to see output
 
-+++++++++++++++++ git commands
++++++++++++++++++ git commands +++++++++++++++++++
 check the 'master' branch for latest changes
 
  git add.
@@ -14,8 +14,9 @@ check the 'master' branch for latest changes
  git remote add origin https://github.com/tarunpatel05/TypeScriptCodes.git
  'git push origin master' or 'git push --set-upstream origin master' once then use 'git push'
 
- +++++++++++++++++ other tsc commands
+ +++++++++++++++++ other tsc commands ++++++++++++++++++++++++++++
 # automatic compilation running, dont need to run tsc fileName.ts on each changes
+tsc // to compile all files mentioned in index.html in src
 tsc app.ts --watch 
 tsc app.ts -w
 

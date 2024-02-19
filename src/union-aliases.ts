@@ -15,7 +15,7 @@
 // const combinedNames = combine("Tarun", "Patel");
 // console.log(combinedNames);
 
-// +++++++++++++++++++++++++++++ literal types ++++++
+// +++++++++++++++++++++++++++++ literal types +++++++++++++++++++++++
 
 // console.log('Time to get started');
 // function combine(input1: number | string, input2: number | string, resultConversion:'as-number'|'as-string') {
@@ -43,7 +43,7 @@
 //   const combinedNames = combine("Tarun", "Patel", 'as-string');
 //   console.log(combinedNames);
 
-// ========================== Type Aliases/Custom Types
+// ========================== Type Aliases/Custom Types ============================
 type Combinable = number|string;
 type ConversionDescriptor = 'as-number'|'as-string'
 
@@ -66,7 +66,7 @@ function combine(input1: Combinable, input2: Combinable, resultConversion: Conve
   const combinedNames = combine("Tarun", "Patel", 'as-string');
   console.log(combinedNames);
 
-// ++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++
 // type User = { name: string; age: number };
 // const u1: User = { name: 'Max', age: 30 }; // this works!
 

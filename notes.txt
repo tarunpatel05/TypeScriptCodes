@@ -16,7 +16,7 @@ npm install --save-dev lite-server
 tsc app.ts
 
 
-++++++++ Core Types +++++++++
+++++++++++++++++++++++ Core Types +++++++++++++++++++++++
 number : 1, 2.3, -10
 string : 'Hi', "Hi", `Hi`
 boolean : true false (truthy falsy does not lie here )
@@ -34,11 +34,11 @@ only JS can be run by browser
 types (set during development)
 
 ** In TS we work with types like 'string' or 'number' all the times
-It is string and number NOT String, number
+It is string and number NOT String, Number
 The core primitive types in TS are all lowercase
 checking types and yelling at us using wrong types
 
-++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 union types
 ex. input1: string|number
 
