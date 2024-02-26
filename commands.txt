@@ -1,4 +1,4 @@
-+++++++++++ after clone
++++++++++++ after clone ++++++++++++++
 do
 npm install
 npm start
@@ -23,3 +23,6 @@ tsc app.ts -w
 tsc --init //to initialize all project , typescript project, create tsconfig.json
 tsc // to compile all the .ts files
 tsc --watch // watch mode for all .ts files
+
++++++++++++++++++++
+To run any specific code, uncomment and copy it to app.ts file it will run automatically in browser localhost:

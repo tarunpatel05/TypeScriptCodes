@@ -86,7 +86,7 @@ function findSubsetsThatSumToTarget(
   let result: number[][] = [];
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j <= nums.length; j++) {
-      if (nums.slice(i, j).reduce((acc, val) => acc + val, 0) === target) {
+      if (nums.slice(i, j).reduce((acc, val) => acc + val,0) === target) {
         result.push(nums.slice(i, j));
         break; // Assuming we only need one subset per starting point
       }
@@ -214,3 +214,14 @@ const removeDuplicatesInDescendingOrder = (abc: string) => {
 
 const resultedString = removeDuplicatesInDescendingOrder("ABCDAABBBCAAAADDDDD");
 console.log(resultedString); // result is ADBC
+
+
+////
+// let str: string = 'abc23!!def56xx'
+
+// // let reg = '/\g'
+// let arr = str.split('');
+// for(let i=0; i<str.length;i++){
+//   if(typeof(arr[i]==='number'))
+//   console.log(arr[i]);
+// }

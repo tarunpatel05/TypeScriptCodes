@@ -1,115 +1,150 @@
-// const userName = 'Tarun';
-// userName = "Patel"
-// let age = 30;
-// age = 29;
+// Interface : describe the structure of object, how the object should look like
+//only structure
+//basically type check the object
+// interface can be used as contract a class can implement and a class then has to adhere to 
 
-// var is not used
-//var result;// declarted here; van use let here
 
-// function add(a:number, b:number){
-//   // var result;// need to declarte it above to use it
-//   result = a+b;
-//   return result;
-// }
-// console.log(result); //now it will work// can use let
-//+++++++++++++++++++++
-// let result;
-// function add(a:number, b:number){
-//   // var result;// need to declarte it above to use it
-//   result = a+b;
-//   return result;
-// }
-// console.log(result); //now it will work// can use let
-//++++++++++++++++++++++++++++++
-// let age = 30;
-// age = 29;
-
-// if(age>20){
-//   var isOld = true; // this variable become with global scope.
-//   // let isOld = true; // this will not work down, it blocked scope not avaiable in down block
+// interface Person {
+//     name:string; // name:string = 'Max'   // can not do this in interface, no concrete value
+//     age:number;
+//     greet(phrase:string):void;
 // }
 
-// console.log(isOld);
-//++++++++++++++++++++++++++++++ Arrrow Function ES6 Nextgen JS+++++
-// // function as expression which is store in variable
-// // const add = () => {}
-// const addArrow = (a:number, b:number) => {
-//   return a+b;
+// let user1:Person
+
+// user1 = {
+//     name:'Max' ,
+//     age: 30,  // see we use comma here not semi lcolon
+//     greet(phrase:string){
+//         console.log(phrase + ' ' + this.name);
+//     }
+// };
+
+// user1.greet('Hi there - i am');
+
+// ++++++++ Can use Type, the why Interface, : you can implement interface in the class, 
+// and interface looks more cleaner
+
+// type Person1 = {
+//     name:string; // name:string = 'Max'   // can not do this in interface, no concrete value
+//     age:number;
+//     greet(phrase:string):void;
 // }
-// const addArrow1 = (a:number, b:number) => a+b; // if we have one expression
+// let user2: Person1;
 
-// const printOutput1 = (output:string|number) =>{
-//   console.log(output);
-// } //it it has only one parameter
-
-// const printOutput:(a:number|string) => void = output => console.log(output);
-
-// console.log(addArrow(2,5));
-// console.log(addArrow1(2,5));
-// printOutput(addArrow1(5,6));
-// printOutput(addArrow(5,6));
-
-// // example where we can use arrow function
-// if(button){
-//   button.addEventListener('click', event => console.log(event));
+//////////////////////// +++++++++++++++++++====
+// interface Greetable {
+//     name:string; // name:string = 'Max'   // can not do this in interface, no concrete value
+//     greet(phrase:string):void;
+// }
+// class Person implements Greetable{
+//     name: string;
+//     age = 30;
+//     constructor(n:string){
+//         this.name =n;
+//     }
+//     greet(phrase: string): void {
+//         console.log(phrase + ' ' + this.name);
+//     }
 // }
 
+// let user1:Greetable;
+// user1 = new Person('Max');
+// user1.greet('Hi there - i am');
+// console.log(user1);
 
-//++++++++++++++++++++++++++++++ Default argument to function+ ++++++
+// let user2 : Person;
+// user2 = new Person('Tarun');
+// console.log(user2);
 
-// const addDefault = (a:number, b:number=1) => a+b; // if we have one expression
-// console.log(addDefault(2)); //can call with 1 argument
-// //define in last only
-// // const addDefault = (a:number=1, b:number) => a+b; // wil not work
+////////////////////////////////// Readonly interface properties
+// interface Greetable {
+//     readonly name:string; //  only readonly can be added no public private
+//     greet(phrase:string):void;
+// }
+// class Person implements Greetable{
+//     name: string;
+//     age = 30;
+//     constructor(n:string){
+//         this.name = n;
+//     }
+//     greet(phrase: string): void {
+//         console.log(phrase + ' ' + this.name);
+//     }
+// }
 
-// spread operator +++++++++++++++
+// let user1:Greetable;
+// user1 = new Person('Max');
+// // user1.name = 'Manu'; // can not do it, because it is readonly property
 
-const hobbies = ['sports', 'cooking'];
-const activeHobbies = ['Hiking'];
+///////////////////////// Extending interface 
+// interface Named{
+//     readonly name:string;
+// }
+// interface Greetable {
+//     greet(phrase:string):void;
+// }
+// class Person implements Greetable, Named{
+//     name: string;
+//     age = 30;
+//     constructor(n:string){
+//         this.name = n;
+//     }
+//     greet(phrase: string): void {
+//         console.log(phrase + ' ' + this.name);
+//     }
+// }
 
-activeHobbies.push(...hobbies);
-const someMoreHobbbies = ['Jumping', ...hobbies];
+// let user1:Greetable;
+// user1 = new Person('Max');
+/////////////////////////////////////////////// Or
+// interface Named{
+//     readonly name:string;
+// }
+// // interface Greetable extends Named, AnotherInterface // can extends other interface as well
+// interface Greetable extends Named{
+//     greet(phrase:string):void;
+// }
+// class Person implements Greetable{
+//     name: string;
+//     age = 30;
+//     constructor(n:string){
+//         this.name = n;
+//     }
+//     greet(phrase: string): void {
+//         console.log(phrase + ' ' + this.name);
+//     }
+// }
 
-const person = {
-  name:'Max',
-  age:30
+// let user1:Greetable;
+// user1 = new Person('Max');
+
+
+//////////////////////////////////////////////////
+type Addfn = (a:number, b:number) => number;
+let add5: Addfn;
+add5 = (n1:number,n2:number) => {
+    return n1+n2
 };
-const copiedPerson = person;
 
-const otherPerson = {...person}; //values get copied
-
-// rest parmeters ++++++++++++++++
-const addNew = (...numbers:number[]) => {
- return numbers.reduce((curResult, curValue) => {
-  return curResult+curValue;
-} , 0)
+interface Named{
+    readonly name:string;
+}
+// interface Greetable extends Named, AnotherInterface
+interface Greetable extends Named{
+    greet(phrase:string):void;
+}
+class Person implements Greetable{
+    name: string;
+    age = 30;
+    constructor(n:string){
+        this.name = n;
+    }
+    greet(phrase: string): void {
+        console.log(phrase + ' ' + this.name);
+    }
 }
 
-const addedNumbers = addNew(5,10,2, 4,5,2.7);
-console.log(addedNumbers);
-
-///+++++++++++++++++++++++++++=
-
-const addNew1 = (...numbers:[number, number, number]) => {
-  return numbers.reduce((curResult, curValue) => {
-   return curResult+curValue;
- } , 0)
- }
- 
- const addedNumbers1 = addNew1(5,10,2);
- console.log(addedNumbers1);
-
-//+++++++++++++++++++ Array destructuring
-const hobbies1 = ['sports', 'cooking'];
-const [hobby1, hobby2, ...remainingHobbies] = hobbies1;
-console.log(hobbies1,hobby1,hobby2);
-
-//// object destructuring
-const person1 = {
-  firstName:'Max',
-  age:30
-};
-const {firstName: userName1,age} = person1;
-console.log(userName1, age, person)
-//++++++++++++++++++++++++++++
+let user1:Greetable;
+user1 = new Person('Max');
 
